@@ -1,97 +1,151 @@
+:root {
+  --primary-color: #2563eb;
+  --text-color: #1f2937;
+  --bg-color: #f9fafb;
+  --card-bg: #ffffff;
+  --hover-color: #1d4ed8;
+  --border-color: #e5e7eb;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh; /* Occupa l'intera altezza della finestra */
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: var(--bg-color);
+  margin: 0;
+  padding: 1.5rem;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-color);
 }
 
 .container {
-    max-width: 500px; /* Larghezza del contenitore */
-    background: #ffffff;
-    padding: 30px; /* Padding del contenitore */
-    border-radius: 8px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    text-align: center; /* Centra il testo */
+  width: 100%;
+  max-width: 600px;
+  background: var(--card-bg);
+  padding: 2.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
 }
 
 h1 {
-    font-size: 1.8em; /* Dimensione del font */
-    color: #333;
-    margin-bottom: 20px;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  color: var(--text-color);
+  line-height: 1.2;
 }
 
 label {
-    display: block;
-    margin-bottom: 10px;
-    color: #555;
-    font-weight: bold; /* Grassetto per il label */
+  display: block;
+  margin-bottom: 0.75rem;
+  font-weight: 500;
+  color: var(--text-color);
 }
 
 .input-field {
-    width: 80%; /* Larghezza ridotta per il campo di input */
-    padding: 10px; /* Padding del campo di input */
-    margin: 0 auto 20px; /* Centrato orizzontalmente */
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px; /* Dimensione del testo */
-    height: 40px; /* Altezza del campo di input */
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  margin-bottom: 1.5rem;
+}
+
+.input-field:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
 }
 
 .button-group {
-    display: flex;
-    justify-content: center; /* Centra i bottoni */
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 2rem;
 }
 
 .btn {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    background-color: #007bff; /* Colore blu elegante */
-    color: white;
-    font-size: 14px;
-    cursor: pointer;
-    margin: 0 5px; /* Margini tra i bottoni */
-    transition: background-color 0.3s, transform 0.2s; /* Effetto di transizione */
-}
-.note {
-    color: #007bff; /* Colore blu per il testo */
-    cursor: pointer; /* Cambia il cursore per indicare che è cliccabile */
-    margin-top: 15px; /* Margine superiore per distanziare dalle altre sezioni */
-    font-weight: bold; /* Grassetto per il testo */
-    text-align: center; /* Allinea al centro */
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  background-color: var(--primary-color);
+  color: white;
+  font-weight: 500;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all 0.2s;
 }
 
 .btn:hover {
-    background-color: #0056b3; /* Colore blu scuro al passaggio del mouse */
-    transform: translateY(-2px); /* Effetto sollevamento al passaggio del mouse */
+  background-color: var(--hover-color);
+  transform: translateY(-1px);
+}
+
+.btn:active {
+  transform: translateY(0);
 }
 
 .instructions {
-    background-color: rgba(255, 255, 255, 0.9); /* Colore bianco semi-trasparente */
-    padding: 15px;
-    border-radius: 8px;
-    margin-top: 20px; /* Margine superiore per distanziare dalle altre sezioni */
-    text-align: left; /* Testo allineato a sinistra */
+  background-color: var(--bg-color);
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  margin: 2rem 0;
 }
 
 .instructions h2 {
-    margin-top: 0; /* Rimuove il margine superiore per il titolo */
-    font-size: 1.2em; /* Dimensione del font per il titolo delle istruzioni */
-    color: #333; /* Colore del testo */
-    text-align: center; /* Centra il titolo */
+  font-size: 1.25rem;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: var(--text-color);
 }
 
 .instructions ol {
-    margin-left: 20px; /* Margine a sinistra per l'elenco */
-    color: #555; /* Colore del testo per le istruzioni */
+  margin: 0;
+  padding-left: 1.25rem;
+  color: var(--text-color);
+}
+
+.instructions li {
+  margin-bottom: 0.5rem;
+}
+
+.instructions li:last-child {
+  margin-bottom: 0;
+}
+
+.note {
+  color: var(--primary-color);
+  font-size: 0.875rem;
+  margin-top: 1.5rem;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.note:hover {
+  opacity: 0.8;
 }
 
 #result {
-    margin-top: 20px;
-    color: #333;
-    font-weight: bold; /* Grassetto per il risultato */
+  margin-top: 1.5rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background-color: var(--bg-color);
+  font-weight: 500;
+}
+
+@media (max-width: 640px) {
+  .container {
+    padding: 1.5rem;
+  }
+  
+  .button-group {
+    flex-direction: column;
+  }
+  
+  .btn {
+    width: 100%;
+  }
 }

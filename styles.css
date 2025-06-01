@@ -1,0 +1,97 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Occupa l'intera altezza della finestra */
+}
+
+.container {
+    max-width: 500px; /* Larghezza del contenitore */
+    background: #ffffff;
+    padding: 30px; /* Padding del contenitore */
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Centra il testo */
+}
+
+h1 {
+    font-size: 1.8em; /* Dimensione del font */
+    color: #333;
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    color: #555;
+    font-weight: bold; /* Grassetto per il label */
+}
+
+.input-field {
+    width: 80%; /* Larghezza ridotta per il campo di input */
+    padding: 10px; /* Padding del campo di input */
+    margin: 0 auto 20px; /* Centrato orizzontalmente */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px; /* Dimensione del testo */
+    height: 40px; /* Altezza del campo di input */
+}
+
+.button-group {
+    display: flex;
+    justify-content: center; /* Centra i bottoni */
+}
+
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff; /* Colore blu elegante */
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+    margin: 0 5px; /* Margini tra i bottoni */
+    transition: background-color 0.3s, transform 0.2s; /* Effetto di transizione */
+}
+.note {
+    color: #007bff; /* Colore blu per il testo */
+    cursor: pointer; /* Cambia il cursore per indicare che è cliccabile */
+    margin-top: 15px; /* Margine superiore per distanziare dalle altre sezioni */
+    font-weight: bold; /* Grassetto per il testo */
+    text-align: center; /* Allinea al centro */
+}
+
+.btn:hover {
+    background-color: #0056b3; /* Colore blu scuro al passaggio del mouse */
+    transform: translateY(-2px); /* Effetto sollevamento al passaggio del mouse */
+}
+
+.instructions {
+    background-color: rgba(255, 255, 255, 0.9); /* Colore bianco semi-trasparente */
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 20px; /* Margine superiore per distanziare dalle altre sezioni */
+    text-align: left; /* Testo allineato a sinistra */
+}
+
+.instructions h2 {
+    margin-top: 0; /* Rimuove il margine superiore per il titolo */
+    font-size: 1.2em; /* Dimensione del font per il titolo delle istruzioni */
+    color: #333; /* Colore del testo */
+    text-align: center; /* Centra il titolo */
+}
+
+.instructions ol {
+    margin-left: 20px; /* Margine a sinistra per l'elenco */
+    color: #555; /* Colore del testo per le istruzioni */
+}
+
+#result {
+    margin-top: 20px;
+    color: #333;
+    font-weight: bold; /* Grassetto per il risultato */
+}

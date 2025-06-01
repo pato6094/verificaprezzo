@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verifica Prezzo Amazon</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Aggiungi il link al file CSS -->
+    <!-- Aggiunta delle favicon -->
+    <link type="image/png" sizes="16x16" rel="icon" href="favicon.png">
+     <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-NB4R7B13QK"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-NB4R7B13QK');
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Verifica il prezzo migliore</h1>
+        
+        <label for="inputLink">Inserisci un link Amazon</label>
+        <input type="text" id="inputLink" placeholder="Incolla qui il link Amazon o il codice" class="input-field">
+
+        <div class="button-group">
+            <button onclick="handleSearch()" class="btn">Cerca Ora</button>
+            <button onclick="showGraph()" class="btn">Mostra Grafico</button>
+            <button onclick="newSearch()" class="btn">Nuova Ricerca</button>
+        </div>
+
+        <div class="instructions">
+            <h2>Istruzioni</h2>
+            <ol>
+                <li>Copia il link del prodotto Amazon che ti interessa</li>
+                <li>Incolla nel box il link Amazon o il codice che hai copiato</li>
+                <li>Premi su "Cerca ora"</li>
+            </ol>
+        </div>
+
+        <p id="note" class="note" onclick="addToFavorites()">N.B. Ricorda di Aggiungere ai Preferiti il sito!</p>
+
+        <p id="result"></p>
+    </div>
+
+    <!-- Includi il file JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>

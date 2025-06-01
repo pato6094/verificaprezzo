@@ -13,7 +13,7 @@ body {
   background-color: var(--bg-color);
   background-image: radial-gradient(circle at 50% 50%, #1a1a1a 0%, var(--bg-color) 100%);
   margin: 0;
-  padding: 1.5rem;
+  padding: 1rem;
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -25,8 +25,8 @@ body {
   width: 100%;
   max-width: 600px;
   background: var(--card-bg);
-  padding: 2.5rem;
-  border-radius: 1.5rem;
+  padding: clamp(1.5rem, 5vw, 2.5rem);
+  border-radius: clamp(1rem, 3vw, 1.5rem);
   box-shadow: 0 8px 32px rgba(198, 255, 0, 0.08);
   backdrop-filter: blur(20px);
   border: 1px solid rgba(255, 255, 255, 0.05);
@@ -39,9 +39,9 @@ body {
 }
 
 h1 {
-  font-size: 2.5rem;
+  font-size: clamp(1.75rem, 5vw, 2.5rem);
   font-weight: 800;
-  margin-bottom: 2rem;
+  margin-bottom: clamp(1.5rem, 4vw, 2rem);
   color: var(--text-color);
   line-height: 1.2;
   background: var(--gradient);
@@ -55,21 +55,21 @@ label {
   margin-bottom: 0.75rem;
   font-weight: 500;
   color: var(--text-color);
-  font-size: 0.9rem;
+  font-size: clamp(0.8rem, 2vw, 0.9rem);
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
 
 .input-field {
   width: 95%;
-  padding: 1rem 1.25rem;
+  padding: clamp(0.75rem, 2vw, 1rem) clamp(1rem, 2vw, 1.25rem);
   border: 1px solid var(--border-color);
-  border-radius: 1rem;
-  font-size: 1rem;
+  border-radius: clamp(0.75rem, 2vw, 1rem);
+  font-size: clamp(0.9rem, 2vw, 1rem);
   transition: all 0.3s ease;
   background: rgba(20, 20, 20, 0.8);
   color: var(--text-color);
-  margin-bottom: 1.5rem;
+  margin-bottom: clamp(1rem, 3vw, 1.5rem);
 }
 
 .input-field:focus {
@@ -80,26 +80,29 @@ label {
 
 .button-group {
   display: flex;
-  gap: 1rem;
+  gap: clamp(0.5rem, 2vw, 1rem);
   flex-wrap: wrap;
   justify-content: center;
-  margin-bottom: 2rem;
+  margin-bottom: clamp(1.5rem, 4vw, 2rem);
 }
 
 .btn {
-  padding: 0.875rem 1.75rem;
+  flex: 1 1 auto;
+  min-width: min(200px, 100%);
+  padding: clamp(0.75rem, 2vw, 0.875rem) clamp(1.25rem, 3vw, 1.75rem);
   border: none;
-  border-radius: 1rem;
+  border-radius: clamp(0.75rem, 2vw, 1rem);
   background: var(--gradient);
   color: var(--bg-color);
   font-weight: 600;
-  font-size: 0.9rem;
+  font-size: clamp(0.8rem, 2vw, 0.9rem);
   cursor: pointer;
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
   text-transform: uppercase;
   letter-spacing: 0.05em;
+  text-align: center;
 }
 
 .btn:hover {
@@ -130,17 +133,17 @@ label {
 
 .instructions {
   background-color: rgba(20, 20, 20, 0.6);
-  padding: 1.75rem;
-  border-radius: 1rem;
-  margin: 2rem 0;
+  padding: clamp(1.25rem, 3vw, 1.75rem);
+  border-radius: clamp(0.75rem, 2vw, 1rem);
+  margin: clamp(1.5rem, 4vw, 2rem) 0;
   border: 1px solid var(--border-color);
   backdrop-filter: blur(10px);
 }
 
 .instructions h2 {
-  font-size: 1.25rem;
+  font-size: clamp(1.1rem, 3vw, 1.25rem);
   margin-top: 0;
-  margin-bottom: 1.25rem;
+  margin-bottom: clamp(1rem, 3vw, 1.25rem);
   color: var(--text-color);
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -148,13 +151,14 @@ label {
 
 .instructions ol {
   margin: 0;
-  padding-left: 1.5rem;
+  padding-left: clamp(1.25rem, 3vw, 1.5rem);
   color: var(--text-color);
 }
 
 .instructions li {
-  margin-bottom: 0.75rem;
+  margin-bottom: clamp(0.5rem, 2vw, 0.75rem);
   opacity: 0.9;
+  font-size: clamp(0.9rem, 2vw, 1rem);
 }
 
 .instructions li:last-child {
@@ -163,8 +167,8 @@ label {
 
 .note {
   color: var(--primary-color);
-  font-size: 0.875rem;
-  margin-top: 1.5rem;
+  font-size: clamp(0.8rem, 2vw, 0.875rem);
+  margin-top: clamp(1.25rem, 3vw, 1.5rem);
   cursor: pointer;
   transition: all 0.3s ease;
   text-align: center;
@@ -177,19 +181,24 @@ label {
 }
 
 #result {
-  margin-top: 1.5rem;
-  padding: 1.25rem;
-  border-radius: 1rem;
+  margin-top: clamp(1.25rem, 3vw, 1.5rem);
+  padding: clamp(1rem, 3vw, 1.25rem);
+  border-radius: clamp(0.75rem, 2vw, 1rem);
   background-color: rgba(20, 20, 20, 0.6);
   font-weight: 500;
   border: 1px solid var(--border-color);
   backdrop-filter: blur(10px);
   text-align: center;
+  font-size: clamp(0.9rem, 2vw, 1rem);
 }
 
-@media (max-width: 640px) {
+@media (max-width: 480px) {
+  body {
+    padding: 0.5rem;
+  }
+
   .container {
-    padding: 1.5rem;
+    padding: 1.25rem;
   }
   
   .button-group {
@@ -198,9 +207,26 @@ label {
   
   .btn {
     width: 100%;
+    min-width: 100%;
   }
-  
+}
+
+@media (max-width: 360px) {
+  .container {
+    padding: 1rem;
+  }
+
   h1 {
-    font-size: 2rem;
+    font-size: 1.5rem;
+  }
+
+  .input-field {
+    padding: 0.75rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 700px;
   }
 }

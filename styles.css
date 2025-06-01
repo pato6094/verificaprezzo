@@ -1,15 +1,17 @@
 :root {
-  --primary-color: #3b82f6;
-  --text-color: #e5e7eb;
-  --bg-color: #111111;
-  --card-bg: #1f1f1f;
-  --hover-color: #2563eb;
-  --border-color: #333333;
+  --primary-color: #c6ff00;
+  --text-color: #ffffff;
+  --bg-color: #0a0a0a;
+  --card-bg: #141414;
+  --hover-color: #d4ff33;
+  --border-color: #222222;
+  --gradient: linear-gradient(135deg, #c6ff00 0%, #96c700 100%);
 }
 
 body {
   font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "San Francisco", system-ui, sans-serif;
   background-color: var(--bg-color);
+  background-image: radial-gradient(circle at 50% 50%, #1a1a1a 0%, var(--bg-color) 100%);
   margin: 0;
   padding: 1.5rem;
   min-height: 100vh;
@@ -24,26 +26,28 @@ body {
   max-width: 600px;
   background: var(--card-bg);
   padding: 2.5rem;
-  border-radius: 1rem;
-  box-shadow: 0 0 20px rgba(59, 130, 246, 0.1);
-  backdrop-filter: blur(10px);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 1.5rem;
+  box-shadow: 0 8px 32px rgba(198, 255, 0, 0.08);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .container:hover {
   transform: translateY(-5px);
-  box-shadow: 0 0 30px rgba(59, 130, 246, 0.2);
+  box-shadow: 0 12px 40px rgba(198, 255, 0, 0.12);
 }
 
 h1 {
-  font-size: 2rem;
-  font-weight: 700;
+  font-size: 2.5rem;
+  font-weight: 800;
   margin-bottom: 2rem;
   color: var(--text-color);
   line-height: 1.2;
-  background: linear-gradient(45deg, #3b82f6, #60a5fa);
+  background: var(--gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  text-align: center;
 }
 
 label {
@@ -51,16 +55,19 @@ label {
   margin-bottom: 0.75rem;
   font-weight: 500;
   color: var(--text-color);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 .input-field {
   width: 100%;
-  padding: 0.75rem 1rem;
+  padding: 1rem 1.25rem;
   border: 1px solid var(--border-color);
-  border-radius: 0.5rem;
+  border-radius: 1rem;
   font-size: 1rem;
   transition: all 0.3s ease;
-  background: rgba(31, 31, 31, 0.8);
+  background: rgba(20, 20, 20, 0.8);
   color: var(--text-color);
   margin-bottom: 1.5rem;
 }
@@ -68,34 +75,37 @@ label {
 .input-field:focus {
   outline: none;
   border-color: var(--primary-color);
-  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+  box-shadow: 0 0 0 3px rgba(198, 255, 0, 0.1);
 }
 
 .button-group {
   display: flex;
-  gap: 0.75rem;
+  gap: 1rem;
   flex-wrap: wrap;
   justify-content: center;
   margin-bottom: 2rem;
 }
 
 .btn {
-  padding: 0.75rem 1.5rem;
+  padding: 0.875rem 1.75rem;
   border: none;
-  border-radius: 0.5rem;
-  background: linear-gradient(45deg, #3b82f6, #60a5fa);
-  color: white;
-  font-weight: 500;
-  font-size: 0.875rem;
+  border-radius: 1rem;
+  background: var(--gradient);
+  color: var(--bg-color);
+  font-weight: 600;
+  font-size: 0.9rem;
   cursor: pointer;
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 .btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(59, 130, 246, 0.3);
+  box-shadow: 0 8px 20px rgba(198, 255, 0, 0.2);
+  background: linear-gradient(135deg, #d4ff33 0%, #a3d800 100%);
 }
 
 .btn:active {
@@ -109,9 +119,9 @@ label {
   left: -50%;
   width: 200%;
   height: 200%;
-  background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.2), transparent);
   transform: rotate(45deg);
-  transition: 0.5s;
+  transition: 0.6s;
 }
 
 .btn:hover::after {
@@ -119,29 +129,32 @@ label {
 }
 
 .instructions {
-  background-color: rgba(31, 31, 31, 0.6);
-  padding: 1.5rem;
-  border-radius: 0.75rem;
+  background-color: rgba(20, 20, 20, 0.6);
+  padding: 1.75rem;
+  border-radius: 1rem;
   margin: 2rem 0;
   border: 1px solid var(--border-color);
-  backdrop-filter: blur(5px);
+  backdrop-filter: blur(10px);
 }
 
 .instructions h2 {
   font-size: 1.25rem;
   margin-top: 0;
-  margin-bottom: 1rem;
+  margin-bottom: 1.25rem;
   color: var(--text-color);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 .instructions ol {
   margin: 0;
-  padding-left: 1.25rem;
+  padding-left: 1.5rem;
   color: var(--text-color);
 }
 
 .instructions li {
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
+  opacity: 0.9;
 }
 
 .instructions li:last-child {
@@ -154,21 +167,24 @@ label {
   margin-top: 1.5rem;
   cursor: pointer;
   transition: all 0.3s ease;
+  text-align: center;
+  font-weight: 500;
 }
 
 .note:hover {
-  color: #60a5fa;
+  color: var(--hover-color);
   transform: translateX(5px);
 }
 
 #result {
   margin-top: 1.5rem;
-  padding: 1rem;
-  border-radius: 0.5rem;
-  background-color: rgba(31, 31, 31, 0.6);
+  padding: 1.25rem;
+  border-radius: 1rem;
+  background-color: rgba(20, 20, 20, 0.6);
   font-weight: 500;
   border: 1px solid var(--border-color);
-  backdrop-filter: blur(5px);
+  backdrop-filter: blur(10px);
+  text-align: center;
 }
 
 @media (max-width: 640px) {
@@ -182,5 +198,9 @@ label {
   
   .btn {
     width: 100%;
+  }
+  
+  h1 {
+    font-size: 2rem;
   }
 }
